@@ -53,7 +53,7 @@ public class TicketCheckoutAct extends AppCompatActivity {
         setContentView(R.layout.activity_ticket_check_out);
 
         Bundle bundle = getIntent().getExtras();
-        String jenis_tiket_baru = bundle.getString("jenis_tiket");
+        final String jenis_tiket_baru = bundle.getString("jenis_tiket");
         getUsernameLocal();
 
         text_nama_wisata = findViewById(R.id.text_nama_wisata);
@@ -189,6 +189,7 @@ public class TicketCheckoutAct extends AppCompatActivity {
 
 
                         Intent gotoSuccessTicket = new Intent(TicketCheckoutAct.this,SuccessBuyTicketAct.class);
+                        gotoSuccessTicket.putExtra("jenis_tiket",jenis_tiket_baru);
                         gotoSuccessTicket.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(gotoSuccessTicket);
                         finish();

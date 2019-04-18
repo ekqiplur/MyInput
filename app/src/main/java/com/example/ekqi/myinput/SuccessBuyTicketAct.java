@@ -10,12 +10,17 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class SuccessBuyTicketAct extends AppCompatActivity implements View.OnClickListener{
 
     Button btn_view_ticket, btn_my_dasboard;
     Animation app_splash, btn_to_top, ttb;
     ImageView icon_success_ticket;
     TextView app_subtitle, app_title;
+
+    String jenis_tiket_baru_lain = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,10 @@ public class SuccessBuyTicketAct extends AppCompatActivity implements View.OnCli
         app_title = findViewById(R.id.app_title);
         btn_my_dasboard = findViewById(R.id.btn_my_dasboard);
         btn_view_ticket = findViewById(R.id.btn_view_ticket);
+
+        Bundle bundle = getIntent().getExtras();
+        final String jenis_tiket_baru = bundle.getString("jenis_tiket");
+        jenis_tiket_baru_lain = jenis_tiket_baru;
 
         app_splash = AnimationUtils.loadAnimation(this, R.anim.app_splash);
         btn_to_top = AnimationUtils.loadAnimation(this, R.anim.btn_to_top);
@@ -42,6 +51,7 @@ public class SuccessBuyTicketAct extends AppCompatActivity implements View.OnCli
 
         btn_view_ticket.setOnClickListener(this);
         btn_my_dasboard.setOnClickListener(this);
+
     }
 
     @Override
@@ -49,6 +59,7 @@ public class SuccessBuyTicketAct extends AppCompatActivity implements View.OnCli
         switch (v.getId()){
             case R.id.btn_view_ticket:
                 Intent gotoMyTicket = new Intent(SuccessBuyTicketAct.this,MyTicketDetailAct.class);
+                gotoMyTicket.putExtra("nama_wisata", jenis_tiket_baru_lain);
                 startActivity(gotoMyTicket);
                 break;
             case R.id.btn_my_dasboard:
