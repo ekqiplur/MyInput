@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MyInput</string>
+    <string name="Slogan">Selalmat Datang</string>
+    <string name="Slogan2">Enjoy The Use</string>
+    <string name="signin">sign in</string>
+    <string name="contnue">contiune</string>
+    <string name="Username_label">User Name</string>
+    <string name="password_label">Password</string>
+    <string name="email_label">Email</string>
+    <string name="Fullname_label">Full Name</string>
+    <string name="status_label">Status</string>
+    <string name="explore">explore now</string>
+    <string name="view_now">View Ticket</string>
+    <string name="buy_ticket">Buy Ticket</string>
+    <string name="Description_detail_ticket">The leaning of the Tower of Pisa
+comes into the story in 1173, when
+construction began.</string>
+    <string name="Description_detail_ticketII">Anak yang berumur lebih dari 3 tahun
+wajib membeli tiket untuk masuk
+kedalam landmark</string>
+    <string name="Success_buy">Anda berhasil membeli tiket
+dan selamat berlibur</string>
+</resources>
